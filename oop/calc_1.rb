@@ -32,23 +32,7 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
+class FancyCalculator < SimpleCalculator
 
   def square_root(number)
     Math.sqrt(number)
@@ -56,5 +40,95 @@ class FancyCalculator
 
 end
 
+simp_calc = SimpleCalculator.new
+adv_calc = FancyCalculator.new
+
 # Write your own driver code below:
+
+puts "TESTING add..."
+puts
+
+result1 = simp_calc.add(2, 3)
+result2 = adv_calc.add(2, 3)
+
+puts "Your method returned:"
+puts result1
+puts result2
+puts
+
+if result1 == 5 && result2 == 5
+  puts "PASS!"
+else
+  puts "F"
+end
+
+puts
+puts "TESTING subtract..."
+puts
+
+result1 = simp_calc.subtract(2, 3)
+result2 = adv_calc.subtract(2, 3)
+
+puts "Your method returned:"
+puts result1
+puts result2
+puts
+
+if result1 == -1 && result2 == -1
+  puts "PASS!"
+else
+  puts "F"
+end
+
+puts
+puts "TESTING multiply..."
+puts
+
+result1 = simp_calc.multiply(2, 3)
+result2 = adv_calc.multiply(2, 3)
+
+puts "Your method returned:"
+puts result1
+puts result2
+puts
+
+if result1 == 6 && result2 == 6
+  puts "PASS!"
+else
+  puts "F"
+end
+
+puts
+puts "TESTING divide..."
+puts
+
+result1 = simp_calc.divide(4, 2)
+result2 = adv_calc.divide(4, 2)
+
+puts "Your method returned:"
+puts result1
+puts result2
+puts
+
+if result1 == 2 && result2 == 2
+  puts "PASS!"
+else
+  puts "F"
+end
+
+puts
+puts "TESTING square_root..."
+puts
+
+result = adv_calc.square_root(4)
+
+puts "Your method returned:"
+puts result
+puts
+
+if result == 2
+  puts "PASS!"
+else
+  puts "F"
+end
 
